@@ -1,16 +1,21 @@
 import React from "react";
-import { View, Text, StatusBar, ScrollView } from "react-native";
+import { View, Text, StatusBar, ScrollView, Pressable } from "react-native";
 import {HAMBURGER,PROFILE,SEARCH_ICON,CLOCK, INSPECTION, ARROW_RIGHT,MAINTENANCE} from "../components/icon/svgIcons";
 import Icon from "../components/icon/Icon";
 import { Searchbar } from 'react-native-paper';
+import { useNavigation } from '@react-navigation/native'
 
-function Home({navigation}){
+
+function Home(){
+    const navigation = useNavigation()
 
     return(
         <ScrollView style={{paddingHorizontal:20,backgroundColor:'#EEECF8',flex:1,paddingBottom:40,paddingTop:20}}>
             <StatusBar backgroundColor={'#fff'} barStyle={'dark-content'}/>
             <View style={{flexDirection:"row",justifyContent:'space-between',alignItems:'center'}}>
-                <Icon name={HAMBURGER} size={30}/>
+                <Pressable onPress={() => navigation.openDrawer()}>
+                    <Icon name={HAMBURGER} size={30}/>
+                </Pressable>
                 <Icon name={PROFILE} size={50}/>
             </View>
 

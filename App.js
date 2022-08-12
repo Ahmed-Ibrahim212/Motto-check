@@ -5,10 +5,9 @@ import Home from './src/screens/Home';
 
 const App = () => {
   return (
-    <Home/>
-    // <NavigationContainer>
-    //   <HomeDrawer/>  
-    // </NavigationContainer>
+    <NavigationContainer>
+      <HomeDrawer/>  
+    </NavigationContainer>
   );
 };
 
